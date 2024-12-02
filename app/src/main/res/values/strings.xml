@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Material Design Guidelines</string>
     <string name="otus_logo_content_description">Otus logo</string>
+    <string name="dynamic_button">Dynamic button</string>
 </resources>

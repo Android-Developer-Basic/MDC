@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private fun setSplashScreenLoadingParameters() {
         var isHideSplashScreen = false
 
-        object : CountDownTimer(10000, 1000) {
+        object : CountDownTimer(1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {}
             override fun onFinish() {
                 isHideSplashScreen = true
