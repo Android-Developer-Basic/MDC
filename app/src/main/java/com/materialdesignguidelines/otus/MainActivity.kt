@@ -8,6 +8,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +21,15 @@ class MainActivity : AppCompatActivity() {
         setInsets()
 
         setSplashScreenLoadingParameters()
+        setErrorListener()
+    }
+
+    private fun setErrorListener() {
+        findViewById<TextInputEditText>(R.id.password_input_edittext).addTextChangedListener { text ->
+            findViewById<TextInputLayout>(R.id.password_edittext).apply {
+                error = if (text != null && text.length < 10) null else getString(R.string.incorrect_password_error)
+            }
+        }
     }
 
     private fun setSplashScreenLoadingParameters() {
