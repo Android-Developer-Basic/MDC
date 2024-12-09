@@ -1,9 +1,11 @@
 package com.materialdesignguidelines.otus
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.view.ViewTreeObserver
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,6 +24,13 @@ class MainActivity : AppCompatActivity() {
 
         setSplashScreenLoadingParameters()
         setErrorListener()
+        setButtonLogin()
+    }
+
+    private fun setButtonLogin() {
+        findViewById<Button>(R.id.sign_in_button).setOnClickListener {
+            startActivity(Intent(this, BottomAppBarActivity::class.java))
+        }
     }
 
     private fun setErrorListener() {
