@@ -63,4 +63,9 @@
     <string name="to_cloud_storage">To cloud storage</string>
     <string name="settings_content_description">Settings</string>
     <string name="settings">Settings</string>
+    <string name="this_is_an_error_toast">This is an error toast</string>
+    <string name="success">Success!</string>
+    <string name="here_is_some_info_for_you">Here is some info for you</string>
+    <string name="beware_of_the_dog">Beware of the dog</string>
+    <string name="normal_toast_w_o_icon">Normal toast w/o icon</string>
 </resources>

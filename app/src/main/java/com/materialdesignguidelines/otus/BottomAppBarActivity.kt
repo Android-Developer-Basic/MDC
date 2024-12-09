@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import es.dmoral.toasty.Toasty
 
 class BottomAppBarActivity : AppCompatActivity() {
 
@@ -18,37 +19,35 @@ class BottomAppBarActivity : AppCompatActivity() {
     private fun setListeners() {
         val bottomAppBar = findViewById<BottomAppBar>(R.id.bottom_app_bar)
         bottomAppBar.setNavigationOnClickListener {
-            showToast("Drawer")
+            Toasty.error(this, getString(R.string.this_is_an_error_toast), Toast.LENGTH_SHORT, true).show()
         }
 
         bottomAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.to_home -> {
-                    showToast("Home")
+                    Toasty.success(this, getString(R.string.success), Toast.LENGTH_SHORT, true).show()
                     true
                 }
 
                 R.id.search -> {
-                    showToast("Search")
+                    Toasty.info(this, getString(R.string.here_is_some_info_for_you), Toast.LENGTH_SHORT, true).show()
                     true
                 }
 
                 R.id.delete -> {
-                    showToast("Delete")
+                    Toasty.warning(this, getString(R.string.beware_of_the_dog), Toast.LENGTH_SHORT, true).show()
                     true
                 }
 
                 else -> {
-                    showToast("Else")
+                    Toasty.warning(this, getString(R.string.beware_of_the_dog), Toast.LENGTH_SHORT, true).show()
                     true
                 }
             }
         }
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { showToast("FAB") }
-    }
-
-    private fun showToast(text: String) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener {
+            Toasty.normal(this, getString(R.string.normal_toast_w_o_icon)).show()
+        }
     }
 }
