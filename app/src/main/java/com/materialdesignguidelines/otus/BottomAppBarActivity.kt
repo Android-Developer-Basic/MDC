@@ -3,6 +3,8 @@ package com.materialdesignguidelines.otus
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.getkeepsafe.taptargetview.TapTarget
+import com.getkeepsafe.taptargetview.TapTargetView
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import es.dmoral.toasty.Toasty
@@ -14,6 +16,22 @@ class BottomAppBarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_bottom_app_bar)
 
         setListeners()
+        showTapTargetForFAB()
+    }
+
+    private fun showTapTargetForFAB() {
+        TapTargetView.showFor(
+            this,
+            TapTarget.forView(
+                findViewById<FloatingActionButton>(R.id.fab),
+                getString(R.string.custom_view_title),
+                getString(R.string.description_for_view)
+            ) // Все операторы ниже -- опциональны
+                .titleTextSize(20)
+                .titleTextColor(android.R.color.white)
+                .descriptionTextSize(10)
+                .cancelable(false)
+        )
     }
 
     private fun setListeners() {

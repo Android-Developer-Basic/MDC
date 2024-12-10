@@ -37,6 +37,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation (libs.toasty)
+    implementation (libs.taptargetview)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

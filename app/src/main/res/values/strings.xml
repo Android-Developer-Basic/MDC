@@ -68,4 +68,6 @@
     <string name="here_is_some_info_for_you">Here is some info for you</string>
     <string name="beware_of_the_dog">Beware of the dog</string>
     <string name="normal_toast_w_o_icon">Normal toast w/o icon</string>
+    <string name="custom_view_title">Custom view example for Otus</string>
+    <string name="description_for_view">Description for the view</string>
 </resources>
